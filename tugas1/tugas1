@@ -1,0 +1,181 @@
+<?php
+
+class Bendamati {
+
+    public $nama;
+  
+    function __construct($nama) {
+      $this->nama = $nama;
+    }
+    public function ambilNama()
+    {
+      return $this->nama;
+    }
+}
+
+class Jenislaptop extends BendaMati{
+
+    public function biodata($merek, $windows)
+    {
+        echo "
+        LAPTOP <br>
+        # $this->nama <br>
+        - $merek<br>
+        - $windows <br>
+        - Kelebihan Laptop <br>";
+        
+    }    
+    public function kelebihanlaptop($kelebihan)
+    {
+        echo "
+        &nbsp;&nbsp; + $kelebihan
+        <br>
+        ";
+    }    
+}
+
+echo "<br>==CLASS CHILD PERTAMA==<br><br>";
+$new = New Jenislaptop("Dynabook Toshiba");
+$new->biodata("Toshiba", "Windows 7");
+$new->kelebihanlaptop("Ram 4gb");
+$new->kelebihanlaptop("Core i5");
+$new->kelebihanlaptop("Kamera Jernih");
+echo "<hr>";
+?>
+
+<?php
+
+class laptop  {
+    public  $nama,
+            $merk,
+            $warna,
+            $ram,
+            $windows;
+
+    public function nyalakanlaptop() {
+
+    }
+
+    public function matikanlaptop() {
+
+    }
+    
+    public function pengerassuara() {
+
+    }
+
+    public function peneranggambar() {
+
+    }
+
+    public function aksespenyimpanan() {
+
+    }
+
+    public function perbesarlayar() {
+
+    }
+
+}
+
+class kerjalaptop extends laptop {
+    public $proyeksilayar = false;
+    public $otg = false;
+
+    public function nyalakanproyeksilayar(){
+        $this->proyeksilayar = true;
+        return "proyeksi layar dinyalkan, layar diperbesar!";
+    }
+
+    public function masukkanotg(){
+        $this->otg = true;
+        return "otg dimasukkan, penyimpanan bisa diakses!";
+    }
+}
+
+class batterysaver extends laptop {
+    public $charger = false;
+    public $modehemat = false;
+
+    public function chargerhidup(){
+        $this->charger = true;
+        return "charger dihidupkan, gambar terang!";
+    }
+
+    public function nyalakanmodehemat(){
+        $this->modehemat = true;
+        return "mode hemat dinyalakan, gambar redup!";
+    }
+}
+
+echo "<br>==CARA KERJA LAPTOP==<br><br>";
+$laptop1 = new kerjalaptop();
+echo $laptop1->perbesarlayar();
+echo "<br>";
+echo $laptop1->nyalakanproyeksilayar();
+echo "<br>";
+echo $laptop1->aksespenyimpanan();
+echo "<br>";
+echo $laptop1->masukkanotg();
+echo "<br>";
+$laptop2 = new batterysaver();
+echo $laptop2->peneranggambar();
+echo "<br>";
+echo $laptop2->chargerhidup();
+echo "<br>";
+echo $laptop2->peneranggambar();
+echo "<br>";
+echo $laptop2->nyalakanmodehemat();
+echo "<hr>";
+?>
+
+
+<?php 
+
+class Makhlukhidup {
+
+    public $nama;
+  
+    function __construct($nama) {
+      $this->nama = $nama;
+    }
+    public function ambilNama()
+    {
+      return $this->nama;
+    }
+}
+
+class Hewan extends Makhlukhidup{
+
+    public function biodataHewan($jenishewan ,$umur, $jeniskelamin)
+    {
+        echo "
+        HEWAN <br>
+        # $this->nama <br>
+        - $jenishewan <br>
+        - $umur Bulan <br>
+        - $jeniskelamin <br>
+        - Makanan Kesukaan Hewan <br>";
+        
+    }    
+    public function DetailHewan($detail)
+    {
+        echo "
+        &nbsp;&nbsp; + $detail
+        <br>
+        ";
+    }    
+}
+
+echo "<br>==CLASS CHILD KEDUA==<br><br>";
+$hewan = New Hewan("Kucing");
+$hewan->biodataHewan("Persia Himalaya" , 4, "Betina");
+$hewan->DetailHewan("Bulunya Long Hair");
+$hewan->DetailHewan("Bulunya berwarna Putih Keabu-abuan");
+$hewan->DetailHewan("Hidung Medium Nose");
+echo "<hr>";
+
+
+?>
+
+
